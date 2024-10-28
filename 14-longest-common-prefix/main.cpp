@@ -1,50 +1,44 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <string.h>
-bool isEqual(char str1[], char str2[2]) {
-    int idex = 0;
-    while (str1[idex] !=0) {
-        if (str1[idex]!=str2[idex]) return false;
-        idex++;
-    }
-    return true;
-}
-
 char* longestCommonPrefix(char** strs, int strsSize) {
-    if (strsSize == 0) return "";
-
-    // Sort based on string length
-    for (int i = 0; i < strsSize - 1; i++) {
-        for (int j = i + 1; j < strsSize; j++) {
-            if (strlen(strs[i]) > strlen(strs[j])) {
-                char* temp = strs[i];
-                strs[i] = strs[j];
-                strs[j] = temp;
-            }
-        }
-    }
-
-    char* prefix = (char*)malloc(strlen(strs[0]) + 1);
+    if (strsSize < 1) return "";
+    int shortest_len_idx = -1;
+    int shortest_len = 99999;
     int len = 0;
-
-    for (int i = 0; i < strlen(strs[0]); i++) {
-        for (int j = 1; j < strsSize; j++) {
-            if (strs[j][i] != strs[0][i]) {
-                prefix[len] = '\0';
-                return prefix;
+    for (int i =0; i< strsSize; i++) {
+        len = 0;
+        while(strs[i][len]!=0)
+            len++ ;
+        if (shortest_len >len) {
+            shortest_len = len;
+            shortest_len_idx = i;
+        }
+    }
+    char* result = (char*)malloc(shortest_len+1);
+    len = 0;
+    printf("\nidx = %d",shortest_len_idx);
+    // prefix (di tu indx =0)
+    for (int j = 0; j < shortest_len;j++)
+    {
+        for (int i = 0; i<strsSize; i++)
+        {
+            if (i == shortest_len_idx) continue;
+            if (strs[i][j] != strs[shortest_len_idx][j]){
+                result[len] = '\0';
+                return result;
             }
         }
-        prefix[len++] = strs[0][i];
+        result[len++] = strs[shortest_len_idx][j];
     }
-
-    prefix[len] = '\0';
-    return prefix;
+    result[len] = 0;
+    return result;
 }
 
 
 int main() {
     char** strs[][] = {"floer","flow","flight"};
-    longestCommonPrefix(strs,3);
+    //longestCommonPrefix(strs,3);
 
     return 0;
 }
