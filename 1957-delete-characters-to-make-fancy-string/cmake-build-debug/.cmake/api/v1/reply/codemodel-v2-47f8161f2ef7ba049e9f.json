@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "1957_delete_characters_to_make_fancy_string",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "1957_delete_characters_to_make_fancy_string::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1957_delete_characters_to_make_fancy_string-Debug-67150615439e874f77c1.json",
+					"name" : "1957_delete_characters_to_make_fancy_string",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/b0ttle/git/b0ttle-leetc0de/1957-delete-characters-to-make-fancy-string/cmake-build-debug",
+		"source" : "/Users/b0ttle/git/b0ttle-leetc0de/1957-delete-characters-to-make-fancy-string"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
